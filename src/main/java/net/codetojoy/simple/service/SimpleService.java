@@ -21,7 +21,8 @@ import net.codetojoy.simple.entity.Person;
 public class SimpleService {
 
     @GetMapping("/players")
-    public ResponseEntity<Result> selectCard( @RequestParam(name="delay_in_seconds", required=false) Integer delayInSeconds) {
+    public ResponseEntity<Result> selectCard(@RequestParam(name="delay_in_seconds", required=false) Integer delayInSeconds,
+                                             @RequestParam(name="do_shuffle", required=false) Boolean doShuffle) {
 
         if (delayInSeconds != null) {
             try {
@@ -59,6 +60,11 @@ public class SimpleService {
         people.add(new Person("Richard Strauss"));
         people.add(new Person("Dmitri Shostakovich"));
         people.add(new Person("Hector Berlioz"));
+
+        if (doShuffle != null && doShuffle) {
+            long seed = System.nanoTime();
+            Collections.shuffle(people, new Random(seed));
+        }
 
         Result result = new Result();
         result.setMessage(message);
