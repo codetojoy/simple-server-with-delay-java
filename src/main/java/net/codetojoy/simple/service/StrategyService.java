@@ -1,4 +1,4 @@
-package net.codetojoy.waro.service;
+package net.codetojoy.simple.service;
 
 import java.util.*;
 import java.util.stream.IntStream;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.codetojoy.waro.entity.Result;
-import net.codetojoy.waro.entity.Person;
+import net.codetojoy.simple.entity.Result;
+import net.codetojoy.simple.entity.Person;
 
 @RestController
 @RequestMapping("/scooter")

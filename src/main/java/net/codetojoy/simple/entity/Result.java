@@ -1,4 +1,4 @@
-package net.codetojoy.waro.entity;
+package net.codetojoy.simple.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
