@@ -18,7 +18,7 @@ import net.codetojoy.simple.entity.Person;
 @RestController
 @RequestMapping("/scooter")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class StrategyService {
+public class SimpleService {
 
     @GetMapping("/players")
     public ResponseEntity<Result> selectCard( @RequestParam(name="delay_in_seconds", required=false) Integer delayInSeconds) {
@@ -35,10 +35,10 @@ public class StrategyService {
         String prefix = "TRACER " + now + " ";
         System.out.println(prefix); 
 
-        int pick = 5150;
         String message = now + " OK";
 
         List<Person> people = new ArrayList<>();
+
         people.add(new Person("Johann Sebastian Bach"));
         people.add(new Person("Ludwig van Beethoven"));
         people.add(new Person("Wolfgang Amadeus Mozart"));
